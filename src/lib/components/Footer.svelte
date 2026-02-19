@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from "$app/paths";
     import { MOVIE_INFO } from "$lib/data/content";
 </script>
 
@@ -6,7 +7,7 @@
     <div class="container">
         <div class="brand">
             <img
-                src="/images/01.%20New%20Royalty%20Logos/new_royalty_logo-banner%20(1).png"
+                src="{base}/images/01.%20New%20Royalty%20Logos/new_royalty_logo-banner%20(1).png"
                 alt="New Royalty Films"
                 class="brand-logo"
             />

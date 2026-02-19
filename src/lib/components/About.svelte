@@ -1,10 +1,11 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { SYNOPSIS, MOVIE_INFO } from '$lib/data/content';
 
 	const paragraphs = SYNOPSIS.split('\n\n');
 </script>
 
-<section id="about" class="about">
+<section id="about" class="about" style="background-image: url('{base}/images/teal-texture.jpeg')">
 	<div class="container">
 		<div class="content">
 			<h2 class="section-title">About The Film</h2>
@@ -19,7 +20,7 @@
 		</div>
 		<div class="visual">
 			<div class="image-frame">
-				<img src="/images/silhouettes-water.png" alt="Two silhouettes at sunset on the water" />
+				<img src="{base}/images/silhouettes-water.png" alt="Two silhouettes at sunset on the water" />
 			</div>
 		</div>
 	</div>
@@ -27,7 +28,9 @@
 
 <style>
 	.about {
-		background: url('/images/teal-texture.jpeg') center/cover no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 		padding: var(--section-padding) var(--content-padding);
 		position: relative;
 		overflow: hidden;

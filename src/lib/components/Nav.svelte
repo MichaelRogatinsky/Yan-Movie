@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { NAV_LINKS } from '$lib/data/content';
 
 	let mobileOpen = $state(false);
@@ -20,7 +21,7 @@
 <nav class:scrolled>
 	<div class="nav-inner">
 		<button class="logo" onclick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-			<img src="/images/01.%20New%20Royalty%20Logos/new_royalty_logo-notext.png" alt="New Royalty Films" class="logo-img" />
+			<img src="{base}/images/01.%20New%20Royalty%20Logos/new_royalty_logo-notext.png" alt="New Royalty Films" class="logo-img" />
 		</button>
 
 		<button

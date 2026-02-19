@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import type { Character } from '$lib/data/content';
 
 	let { character }: { character: Character } = $props();
@@ -14,7 +15,7 @@
 <div class="card" class:lead={character.isLead}>
 	<div class="avatar" style="--accent: {character.accentColor}">
 		{#if character.image}
-			<img src={character.image} alt={character.name} class="avatar-img" />
+			<img src="{base}{character.image}" alt={character.name} class="avatar-img" />
 		{:else}
 			<span class="initials">{initials}</span>
 		{/if}

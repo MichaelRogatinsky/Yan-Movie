@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import type { TeamMember } from '$lib/data/content';
 
 	let { member, reversed = false, imagePosition = 'top' }: { member: TeamMember; reversed?: boolean; imagePosition?: string } = $props();
@@ -8,7 +9,7 @@
 
 <div class="member" class:reversed>
 	<div class="photo">
-		<img src={member.image} alt={member.name} style="object-position: {imagePosition}" />
+		<img src="{base}{member.image}" alt={member.name} style="object-position: {imagePosition}" />
 	</div>
 	<div class="info">
 		<h3 class="name">{member.name}</h3>

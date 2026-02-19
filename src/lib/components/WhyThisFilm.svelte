@@ -1,8 +1,9 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { WHY_THIS_FILM } from '$lib/data/content';
 </script>
 
-<section id="why" class="why">
+<section id="why" class="why" style="background-image: url('{base}/images/teal-texture.jpeg')">
 	<div class="container">
 		<div class="content">
 			<h2 class="section-title">{WHY_THIS_FILM.title}</h2>
@@ -17,7 +18,7 @@
 		</div>
 		<div class="visual">
 			<div class="image-frame">
-				<img src="/images/sunset-silhouette.png" alt="Couple silhouette at sunset" />
+				<img src="{base}/images/sunset-silhouette.png" alt="Couple silhouette at sunset" />
 			</div>
 		</div>
 	</div>
@@ -25,7 +26,9 @@
 
 <style>
 	.why {
-		background: url('/images/teal-texture.jpeg') center/cover no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 		padding: var(--section-padding) var(--content-padding);
 		position: relative;
 	}

@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { MOVIE_INFO } from '$lib/data/content';
 </script>
 
 <section class="hero">
-	<div class="hero-bg"></div>
+	<div class="hero-bg" style="background-image: url('{base}/images/A%20Floridians%20Guide%20-%20Proposal.png')"></div>
 	<div class="hero-overlay"></div>
 	<div class="hero-content">
 		<h1 class="title">{MOVIE_INFO.title}</h1>
@@ -34,7 +35,9 @@
 	.hero-bg {
 		position: absolute;
 		inset: 0;
-		background: url('/images/A%20Floridians%20Guide%20-%20Proposal.png') center/cover no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 		transform: scale(1.05);
 	}
 

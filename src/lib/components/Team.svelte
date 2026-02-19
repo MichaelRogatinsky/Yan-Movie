@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { TEAM } from '$lib/data/content';
 	import TeamMemberCard from './TeamMember.svelte';
 </script>
 
-<section id="team" class="team">
+<section id="team" class="team" style="background-image: url('{base}/images/teal-texture.jpeg')">
 	<div class="container">
 		<h2 class="section-title">Meet The Team</h2>
 		<div class="members">
@@ -15,7 +16,9 @@
 
 <style>
 	.team {
-		background: url('/images/teal-texture.jpeg') center/cover no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 		padding: var(--section-padding) var(--content-padding);
 	}
 
