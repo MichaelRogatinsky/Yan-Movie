@@ -1,10 +1,22 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { MOVIE_INFO } from '$lib/data/content';
+
+	let heroBg: HTMLElement;
+
+	$effect(() => {
+		const onScroll = () => {
+			if (!heroBg) return;
+			const offset = window.scrollY * 0.4;
+			heroBg.style.transform = `scale(1.15) translateY(${offset}px)`;
+		};
+		window.addEventListener('scroll', onScroll, { passive: true });
+		return () => window.removeEventListener('scroll', onScroll);
+	});
 </script>
 
 <section class="hero">
-	<div class="hero-bg" style="background-image: url('{base}/images/A%20Floridians%20Guide%20-%20Proposal.png')"></div>
+	<div class="hero-bg" bind:this={heroBg} style="background-image: url('{base}/images/A%20Floridians%20Guide%20-%20Proposal.png')"></div>
 	<div class="hero-overlay"></div>
 	<div class="hero-content">
 		<h1 class="title">{MOVIE_INFO.title}</h1>
@@ -38,7 +50,8 @@
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
-		transform: scale(1.05);
+		transform: scale(1.15);
+		will-change: transform;
 	}
 
 	.hero-overlay {

@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { DIRECTOR_STATEMENT } from '$lib/data/content';
+	import { parallax } from '$lib/actions/parallax';
 
 	const paragraphs = DIRECTOR_STATEMENT.split('\n\n');
 </script>
 
-<section id="statement" class="statement">
+<section id="statement" class="statement" use:parallax>
 	<div class="container">
 		<h2 class="section-title">Director's Statement</h2>
 		<div class="content">
@@ -20,7 +21,12 @@
 
 <style>
 	.statement {
-		background: linear-gradient(135deg, #8a2670 0%, #9b2d7b 30%, #b03d94 60%, #c44bad 100%);
+		background:
+			linear-gradient(to bottom right, rgba(180, 50, 140, 0.3) 0%, rgba(100, 30, 80, 0.15) 50%, rgba(220, 100, 180, 0.25) 100%),
+			linear-gradient(to top left, rgba(160, 40, 100, 0.25) 0%, rgba(200, 80, 170, 0.15) 40%, rgba(120, 30, 90, 0.2) 100%),
+			linear-gradient(140deg, #8a2670 0%, #7b1e60 15%, #9b2d7b 35%, #b848a0 55%, #a03080 75%, #c44bad 90%, #8a2670 100%);
+		background-size: 100% 300%, 100% 300%, 100% 300%;
+		background-position: center 50%;
 		padding: var(--section-padding) var(--content-padding);
 		position: relative;
 		overflow: hidden;

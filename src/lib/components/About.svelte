@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { SYNOPSIS, MOVIE_INFO } from '$lib/data/content';
+	import { parallax } from '$lib/actions/parallax';
 
 	const paragraphs = SYNOPSIS.split('\n\n');
 </script>
 
-<section id="about" class="about" style="background-image: url('{base}/images/teal-texture.jpeg')">
+<section id="about" class="about" use:parallax>
 	<div class="container">
 		<div class="content">
 			<h2 class="section-title">About The Film</h2>
@@ -28,9 +29,12 @@
 
 <style>
 	.about {
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
+		background:
+			linear-gradient(135deg, rgba(137, 204, 208, 0.7) 0%, rgba(200, 168, 208, 0.4) 50%, rgba(232, 168, 124, 0.7) 100%),
+			linear-gradient(225deg, rgba(106, 188, 196, 0.6) 0%, rgba(168, 216, 220, 0.3) 40%, rgba(255, 155, 80, 0.5) 100%),
+			linear-gradient(160deg, #89ccd0 0%, #b8d8e0 20%, #d4a8c8 45%, #e8a87c 70%, #f0c090 85%, #89ccd0 100%);
+		background-size: 100% 300%, 100% 300%, 100% 300%;
+		background-position: center 50%;
 		padding: var(--section-padding) var(--content-padding);
 		position: relative;
 		overflow: hidden;

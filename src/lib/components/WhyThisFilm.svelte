@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { WHY_THIS_FILM } from '$lib/data/content';
+	import { parallax } from '$lib/actions/parallax';
 </script>
 
-<section id="why" class="why" style="background-image: url('{base}/images/teal-texture.jpeg')">
+<section id="why" class="why" use:parallax>
 	<div class="container">
 		<div class="content">
 			<h2 class="section-title">{WHY_THIS_FILM.title}</h2>
@@ -26,9 +27,12 @@
 
 <style>
 	.why {
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
+		background:
+			linear-gradient(to top right, rgba(232, 114, 58, 0.2) 0%, rgba(168, 216, 220, 0.3) 50%, rgba(196, 75, 173, 0.15) 100%),
+			linear-gradient(315deg, rgba(255, 155, 80, 0.25) 0%, rgba(240, 192, 144, 0.2) 40%, rgba(137, 204, 208, 0.25) 100%),
+			linear-gradient(150deg, #e8a87c 0%, #f0c898 18%, #d4b8a0 35%, #a8d8dc 55%, #89ccd0 75%, #c0a8d0 90%, #e8a87c 100%);
+		background-size: 100% 300%, 100% 300%, 100% 300%;
+		background-position: center 50%;
 		padding: var(--section-padding) var(--content-padding);
 		position: relative;
 	}
